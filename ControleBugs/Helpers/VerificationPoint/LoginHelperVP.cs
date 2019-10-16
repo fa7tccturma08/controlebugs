@@ -12,7 +12,7 @@ namespace ControleBugs.Helpers.VerificationPoint
 
         public Boolean verificarSeAEdicaoDeUsuarioEstaDisponivel()
         {
-            implicitWaintById("nome");
+            ImplicitWaintById("nome");
             var campoNome = Driver.FindElement(By.Id("nome"));
 
             if (campoNome != null)
@@ -28,7 +28,7 @@ namespace ControleBugs.Helpers.VerificationPoint
         public string GetMensagemLogin()
         {
 
-            implicitWaintByXpath("//*[@id='mensagens']/li");
+            ImplicitWaintByXpath("//*[@id='mensagens']/li");
             var objMensagem = Driver.FindElement(By.Id("mensagens"));
             String MensagemTela = GetTextInnerText(objMensagem).Trim();
 

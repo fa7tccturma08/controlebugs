@@ -4,8 +4,7 @@ namespace ControleBugs.Helpers
 {
     public class LoginHelper : TelaHelper
     {
-        public string Login = "";
-        public string Senha = "";
+        
 
         public static void AbrirAplicacao(string URL)
         {
@@ -20,34 +19,34 @@ namespace ControleBugs.Helpers
         public void PreencherCamposLogin(string usuario, string senha)
         {
 
-            IWebElement user = Driver.FindElement(By.Id("campoLogin"));
-            IWebElement password = Driver.FindElement(By.Id("campoSenha"));
+            IWebElement user = Driver.FindElement(By.Id("session_email"));
+            IWebElement password = Driver.FindElement(By.Id("session_password"));
 
-            implicitWaintById("campoLogin");
+            ImplicitWaintById("session_email");
 
-            clickObject(user);
+            ClickObjet(user);
             SetText(user, usuario);
 
-            implicitWaintById("campoSenha");
-            clickObject(password);
+            ImplicitWaintById("session_password");
+            ClickObjet(password);
             SetText(password, senha);
 
 
         }
 
-        public void SelecionarAOpcaoLogarNaS344()
+        public void SelecionarAOpcaoDeLogin()
         {
-            IWebElement botaoLogar = Driver.FindElement(By.Id("btnLogar"));
-            implicitWaintById("btnLogar");
-            clickObject(botaoLogar);
+            IWebElement botaoLogar = Driver.FindElement(By.XPath("//input[@name='commit']"));
+            ImplicitWaintByXpath("//input[@name='commit']");
+            ClickObjet(botaoLogar);
 
         }
 
         public void SelecionarAOpcaoSair()
         {
-            IWebElement linkSair = Driver.FindElement(By.Id("linkSair"));
-            implicitWaintById("linkSair");
-            clickObject(linkSair);
+            IWebElement linkSair = Driver.FindElement(By.XPath("//a[contains(text(),'Sign up')]"));
+            ImplicitWaintByXpath("//a[contains(text(),'Sign up')]");
+            ClickObjet(linkSair);
         }
         
         public static void FecharAplicacao()

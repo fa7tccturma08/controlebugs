@@ -1,5 +1,6 @@
 ﻿
 
+using ControleBugs.Util;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
@@ -12,10 +13,11 @@ namespace ControleBugs.Helpers
     {
 
         public static IWebDriver Driver = new FirefoxDriver();
+        private static int Timeout = Convert.ToInt32(ReadAppConfig.ReadSetting("timeout"));
 
 
 
-        public void clickObject(IWebElement elemento)
+        public void ClickObjet(IWebElement elemento)
         {
 
             elemento.Click();
@@ -47,21 +49,21 @@ namespace ControleBugs.Helpers
 
 
 
-        public void implicitWaintById(string htmlElement)
+
+
+        public void ImplicitWaintById(string htmlElement)
         {
-            var timeout = 10000; // in milliseconds
-            var wait = new WebDriverWait(Driver, TimeSpan.FromMilliseconds(timeout));
+            var wait = new WebDriverWait(Driver, TimeSpan.FromMilliseconds(Timeout));
             wait.Until(ExpectedConditions.ElementIsVisible(By.Id(htmlElement)));
         }
 
-        public void implicitWaintByXpath(string htmlElement)
+        public void ImplicitWaintByXpath(string htmlElement)
         {
-            var timeout = 10000; // in milliseconds
-            var wait = new WebDriverWait(Driver, TimeSpan.FromMilliseconds(timeout));
+            var wait = new WebDriverWait(Driver, TimeSpan.FromMilliseconds(Timeout));
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(htmlElement)));
         }
 
-        public static void sleep(int time)
+        public static void Sleep(int time)
         {
             Thread.Sleep(time*1000);
         }

@@ -110,7 +110,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RealizarLogin.feature</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\PajeObjects\LoginHelper.cs" />
+    <Compile Include="Helpers\PajeObjects\Login\LoginHelper.cs" />
     <Compile Include="Helpers\PajeObjects\ManterUsuarioHelper.cs" />
     <Compile Include="Helpers\PajeObjects\TelaHelper.cs" />
     <Compile Include="Helpers\TelaHelper.cs" />

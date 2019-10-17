@@ -34,15 +34,7 @@ namespace ControleBugs.Helpers.PajeObjects
             MaximizeBrowser();
         }
 
-        public void LoginApp(String strTypeUser, String strValueUser, String user,
-             String strTypePassWord, String strValuePassWord, String senha, String url)
-        {
-
-            LoadURL(url);
-            SetText(strTypeUser, strValueUser, user);
-            SetText(strTypePassWord, strValuePassWord, senha);
-            MaximizeBrowser();
-        }
+       
 
 
         public String getCell(String strType, String strValue, int row, int col)
